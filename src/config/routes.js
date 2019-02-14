@@ -4,9 +4,12 @@ import { createStackNavigator, createAppContainer, } from 'react-navigation';
 import Home from './../pages/HomePage';
 import Camera from './../pages/Camera';
 
-export default createAppContainer(Routes);
-
 const Routes = createStackNavigator({
-    Home,
-    Camera
+    Home: Home,
+    Camera: Camera
+},
+{
+    headerMode: 'none'
 })
+
+export default createAppContainer(Routes);
