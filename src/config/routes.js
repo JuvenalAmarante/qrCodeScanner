@@ -1,15 +1,18 @@
 import React from 'react';
-import { createStackNavigator, createAppContainer, } from 'react-navigation';
+import {createSwitchNavigator, createAppContainer} from 'react-navigation';
 
 import Home from './../pages/HomePage';
 import Camera from './../pages/Camera';
 
-const Routes = createStackNavigator({
+const Routes = createSwitchNavigator(
+  {
     Home: Home,
-    Camera: Camera
-},
-{
-    headerMode: 'none'
-})
+    Camera: Camera,
+  },
+  {
+    initialRouteName: 'Home',
+    headerMode: 'none',
+  },
+);
 
 export default createAppContainer(Routes);
